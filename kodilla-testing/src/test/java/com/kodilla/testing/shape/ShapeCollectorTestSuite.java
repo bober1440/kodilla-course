@@ -65,6 +65,7 @@ public class ShapeCollectorTestSuite {
             //Then
             assertEquals(Triangle, retrievedShape);
         }
+        @Test
         void showFiguresTest(){
             //Given
             Shape Triangle = new Triangle(8,4);
