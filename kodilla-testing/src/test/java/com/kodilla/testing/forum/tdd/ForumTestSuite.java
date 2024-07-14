@@ -5,6 +5,7 @@ import com.kodilla.testing.forum.ForumUser;
 import org.junit.jupiter.api.*;
 
 
+
 @DisplayName("TDD: Forum Test Suite")
 public class ForumTestSuite {
     private static int testCounter = 0;
@@ -25,7 +26,7 @@ public class ForumTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
-    @org.junit.jupiter.api.Nested
+    @Nested
     @DisplayName("Tests for posts")
     class TestPosts {
         @Test

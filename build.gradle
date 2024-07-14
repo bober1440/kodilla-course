@@ -24,6 +24,5 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 test {
-// previous JVM options
-    jvmArgs("-noverify", "-XX:+EnableDynamicAgentLoading", "-Djdk.instrument.traceUsage") // add this
+
 }

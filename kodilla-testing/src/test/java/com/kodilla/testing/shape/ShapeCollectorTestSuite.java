@@ -3,7 +3,7 @@ package com.kodilla.testing.shape;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
-@DisplayName("TDD :ShapeCollector Test Suite")
+@DisplayName ("TDD :ShapeCollector Test Suite")
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
 
