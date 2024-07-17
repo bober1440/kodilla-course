@@ -58,25 +58,25 @@ public class StatisticsTestSuite {
         @DisplayName("Test when posts quantity equals 0")
         @Test
         public void testPostsQuantityEquals0() {
-        //Given
+            //Given
             resultListOf0Posts = generateNPosts(0);
             when(statisticsMock.postsCount()).thenReturn(resultListOf0Posts);
-        //When
+            //When
             int listOf0Posts = statistics.statisticsData.postsCount();
-        //Then
+            //Then
             assertEquals(resultListOf0Posts, listOf0Posts);
-    }
-         @DisplayName("Test when posts quantity equals 1000")
-         @Test
-         public void testPostsQuantityEquals1000() {
+        }
+        @DisplayName("Test when posts quantity equals 1000")
+        @Test
+        public void testPostsQuantityEquals1000() {
             //Given
-             resultListOf1000Posts = generateNPosts(1000);
-             when(statisticsMock.postsCount()).thenReturn(resultListOf1000Posts);
-             // When
-             int listOf1000Posts = statistics.statisticsData.postsCount();
-             //Then
-             assertEquals(resultListOf1000Posts, listOf1000Posts);
-         }
+            resultListOf1000Posts = generateNPosts(1000);
+            when(statisticsMock.postsCount()).thenReturn(resultListOf1000Posts);
+            // When
+            int listOf1000Posts = statistics.statisticsData.postsCount();
+            //Then
+            assertEquals(resultListOf1000Posts, listOf1000Posts);
+        }
     }
 
     @Nested
