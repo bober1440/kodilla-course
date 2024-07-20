@@ -183,7 +183,7 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        var averageTime = project.getTaskLists().stream()
+        var averageTime = project.getTaskLists().stream()    //or use OptionalDouble
                 .filter(inProgressTasks::contains)
                 .flatMap(t ->t.getTasks().stream())
                 .mapToLong(d -> ChronoUnit.DAYS.between(d.getCreated(), LocalDate.now()))
