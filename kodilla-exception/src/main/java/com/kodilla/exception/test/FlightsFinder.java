@@ -28,6 +28,6 @@ public class FlightsFinder {
             }
 
         }
-        throw new RouteNotFoundException("Try new destination!");
+        throw new RouteNotFoundException("The airport was not found. Check your flights");
     }
 }

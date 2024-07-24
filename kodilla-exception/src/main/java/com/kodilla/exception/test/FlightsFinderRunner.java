@@ -13,11 +13,22 @@ public class FlightsFinderRunner {
             System.out.println("Searching finished");
         }
 
-        Flight flight2 = new Flight("Warsaw","Paris");
+        Flight flight2 = new Flight("Warsaw","Katowice");
         FlightsFinder flightsFinder2 = new FlightsFinder();
 
         try{
             flightsFinder.findFlights(flight2);
+        } catch (RouteNotFoundException e) {
+            System.out.println("Route not found  " + e.getMessage());
+        } finally {
+            System.out.println("Searching finished");
+        }
+
+        Flight flight3 = new Flight("Warsaw","Belgrad");
+        FlightsFinder flightsFinder3 = new FlightsFinder();
+
+        try{
+            flightsFinder.findFlights(flight3);
         } catch (RouteNotFoundException e) {
             System.out.println("Route not found  " + e.getMessage());
         } finally {
