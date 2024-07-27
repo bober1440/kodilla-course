@@ -5,29 +5,26 @@ import java.util.Map;
 
 public class FlightsFinder {
 
-    public void findFlights(Flight flight) throws  RouteNotFoundException{
-        Map<String, Boolean> flights = new HashMap<>();
-        flights.put("Warsaw", true);
-        flights.put("Cracow", false);
-        flights.put("Katowice", false);
-        flights.put("Lima", true);
-        flights.put("Barcelona", true);
-        flights.put("Malta", true);
-        flights.put("Madrid", true);
-        flights.put("Berlin", false);
+    public String findFlights(Flight flight) throws RouteNotFoundException {
+        Map<String, Boolean> airports = new HashMap<>();
+        airports.put("Cracow", true);
+        airports.put("Warsaw", false);
+        airports.put("Barcelona", false);
+        airports.put("Madrid", true);
+        airports.put("Oslo", false);
+        airports.put("Osaka", false);
+        airports.put("Tokyo", true);
+        airports.put("Katowice", false);
+        airports.put("New York", true);
 
-        for(Map.Entry<String, Boolean> entry : flights.entrySet()){
-            if (entry.getKey().equals(flight.getArrivalAirport()) && entry.getValue()){
-                System.out.println("You can flight there");
-                return;
-            }
-
-            if (entry.getKey().equals(flight.getArrivalAirport()) && !entry.getValue()){
-                System.out.println("You can't flight there");
-                return;
-            }
-
+        if (!airports.containsKey(flight.getArrivalAirport()) || !airports.containsKey(flight.getDepartureAirport())) {
+            throw new RouteNotFoundException("Route not found");
+        }else if(flight.getDepartureAirport().equals(flight.getArrivalAirport())) {
+                return "Wrong way ! You can't go to the same airport";
+        } else if (airports.get(flight.getArrivalAirport()) && airports.get(flight.getDepartureAirport())) {
+            return "This flight is available";
+        } else{
+            return "This flight is not available";
         }
-        throw new RouteNotFoundException("The airport was not found. Check your flights");
     }
 }
