@@ -35,7 +35,7 @@ public class ConnectionFlights {
         int n = 1;
         for(Flight departureConnection : departureList) {
             for(Flight arrivalConnection : arrivalList) {
-                if(departureConnection.getDepartureAirport().equals(departureAirport)) {
+                if(departureConnection.getArrivalAirport().equals(arrivalConnection.getDepartureAirport())) {
                     System.out.println("Connecting " + n);
                     System.out.println(departureConnection + "\n" + arrivalConnection);
                     n++;

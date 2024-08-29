@@ -4,7 +4,7 @@ public class FlightSeekerRunner {
     public static void main(String[] args) {
         ConnectionFlights connectionFlights = new ConnectionFlights();
         String departure = "Warsaw";
-        String arrival = "Cracow";
+        String arrival = "Madrid";
 
         System.out.println("Possible connection from: " + departure);
         connectionFlights.searchByDeparture(departure);
