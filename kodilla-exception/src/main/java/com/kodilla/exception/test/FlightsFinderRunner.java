@@ -32,8 +32,5 @@ public class FlightsFinderRunner {
             System.out.println("Searching finished");
         }
 
-
-
-
     }
 }
