@@ -1,4 +1,4 @@
-package com.kodilla.spring;
+package com.kodilla.spring.shape;
 
 
 import org.junit.jupiter.api.Test;
@@ -37,6 +37,28 @@ class KodillaSpringApplicationTests {
 
         //Then
         assertEquals("This is a triangle.", name);
+    }
+
+    @Test
+    void testSquareLoadedIntoContainer() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Shape shape = context.getBean(Square.class);
+        //When
+        String name = shape.getShapeName();
+        //Then
+        assertEquals("This is a square.", name);
+    }
+
+    @Test
+    void testShapeLoadedIntoContainer() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Shape shape = (Shape) context.getBean("chosenShape");
+        //When
+        String name = shape.getShapeName();
+        //
+        System.out.println("Chosen shape says: " + name);
     }
 
     @Test
