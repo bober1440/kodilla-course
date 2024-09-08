@@ -8,6 +8,7 @@ include 'kodilla-spring-intro'
 include 'kodilla-good-patterns'
 include 'kodilla-spring-web'
 include 'kodilla-spring'
-
-
+include 'kodilla-tictactoe'
+include 'kodilla-tictactoe'
+include 'kodilla-patterns'
 
