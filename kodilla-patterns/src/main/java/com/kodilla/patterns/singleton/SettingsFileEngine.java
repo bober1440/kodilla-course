@@ -1,11 +1,11 @@
 package com.kodilla.patterns.singleton;
 
-public final class SettingsFileEngine {
+public enum SettingsFileEngine {
+
+    INSTANCE;
+
     private String fileName = "";
 
-    public SettingsFileEngine() {
-
-    }
 
     public String getFileName() {
         return fileName;
