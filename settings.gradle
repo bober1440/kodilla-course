@@ -12,4 +12,5 @@ include 'kodilla-tictactoe'
 include 'kodilla-tictactoe'
 include 'kodilla-patterns'
 include 'kodilla-jdbc'
+include 'kodilla-hibernate'
 
