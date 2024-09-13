@@ -76,7 +76,7 @@ public class DbManagerTestSuite {
         DbManager dbManager = DbManager.getInstance();
         //when
         String sqlQuery = """
-        select u.firstname, u.lastname, count(posts.USER_ID) as POSTQUANTITY
+        select u.firstname, u.lastname, count(posts.USER_ID) 
                         from users u join posts on posts.user_id = u.id
                         group by posts.USER_ID
                         having count(posts.USER_ID) >= 2;  
