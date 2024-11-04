@@ -69,7 +69,7 @@ class SudokuElementTest {
         SudokuBoard board = new SudokuBoard();
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                board.setField(row, col, (col + row * 3) % 9 + 1);  // Wypełnianie losowymi wartościami
+                board.setField(row, col, (col + row * 3) % 9 + 1);
             }
         }
         assertTrue(board.isSolved());
@@ -102,7 +102,7 @@ class SudokuElementTest {
     void testSolveUnsolvableSudoku() {
         SudokuBoard board = new SudokuBoard();
         board.setField(0, 0, 1);
-        board.setField(0, 1, 1);  // Conflict - cannot solve
+        board.setField(0, 1, 1);
 
         SudokuSolver solver = new SudokuSolver();
         assertFalse(solver.solve(board));
