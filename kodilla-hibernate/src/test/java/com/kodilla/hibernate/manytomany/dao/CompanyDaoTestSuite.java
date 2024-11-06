@@ -2,10 +2,14 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
@@ -13,6 +17,15 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    @Autowired
+    private EmployeeDao employeeDao;
+
+    @AfterEach
+    void cleanUp() {
+        employeeDao.deleteAll();
+        companyDao.deleteAll();
+    }
 
     @Test
     void testSaveManyToMany() {
@@ -58,5 +71,37 @@ class CompanyDaoTestSuite {
         //} catch (Exception e) {
         //    //do nothing
         //}
+    }
+
+    @Test
+    void testFindByLastName() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        employeeDao.save(johnSmith);
+
+        //When
+        List<Employee> result = employeeDao.findByLastName("Smith");
+
+        //Then
+        assertEquals(1, result.size());
+
+        //CleanUp
+        employeeDao.deleteAll();
+    }
+
+    @Test
+    void testFindByFirstThreeLetters() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        companyDao.save(softwareMachine);
+
+        //When
+        List<Company> result = companyDao.findByFirstThreeLetters("Sof");
+
+        //Then
+        assertEquals(1, result.size());
+
+        //CleanUp
+        companyDao.deleteAll();
     }
 }
