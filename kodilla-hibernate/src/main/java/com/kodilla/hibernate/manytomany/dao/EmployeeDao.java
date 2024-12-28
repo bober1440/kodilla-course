@@ -14,4 +14,7 @@ import java.util.List;
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
     @Query
     List<Employee> findByLastName(@Param("LASTNAME") String lastname);
+
+    @Query("FROM Employee WHERE lastname LIKE :LASTNAME_FRAGMENT")
+    List<Employee> findByLastNameFragment(String LASTNAME_FRAGMENT);
 }
