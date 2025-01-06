@@ -1,7 +1,6 @@
-package com.kodilla.kodillapatterns2.patterns2;
+package com.kodilla.kodillapatterns2.facade;
 
 
-import com.kodilla.kodillapatterns2.facade.ShopService;
 import com.kodilla.kodillapatterns2.facade.api.ItemDto;
 import com.kodilla.kodillapatterns2.facade.api.OrderDto;
 import com.kodilla.kodillapatterns2.facade.api.OrderFacade;
