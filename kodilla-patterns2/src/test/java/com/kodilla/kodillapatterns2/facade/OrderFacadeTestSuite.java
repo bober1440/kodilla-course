@@ -18,7 +18,7 @@ public class OrderFacadeTestSuite {
         // Given
         OrderDto orderDto = new OrderDto();
 
-        orderDto.addItem(new ItemDto(1L, 2)); // Produkt o ID 1, ilość 2
+        orderDto.addItem(new ItemDto(1L, 2));
 
         Long userId = 1L;
 
